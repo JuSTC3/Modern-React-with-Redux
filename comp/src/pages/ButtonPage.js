@@ -6,7 +6,7 @@ function ButtonPage() {
     console.log('click!!');
   }
   return (
-    <div className="App">
+    <div>
       <div>
         <Button primary rounded onClick={handleclick} className="mb-5"><GoBell />Primary</Button>
       </div>
