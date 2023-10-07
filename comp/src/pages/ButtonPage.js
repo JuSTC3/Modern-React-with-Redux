@@ -3,7 +3,6 @@ import { GoBell, GoCloud } from 'react-icons/go';
 
 function ButtonPage() {
   const handleclick = () => {
-    console.log('click!!');
   }
   return (
     <div>
