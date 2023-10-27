@@ -2,6 +2,10 @@ import { useState } from "react";
 import { GoTriangleDown, GoTriangleUp } from 'react-icons/go'
 import Table from "./Table";
 
+function useSort() {
+
+}
+
 function SortableTable(props) {
     const [sortOrder, setSortOrder] = useState(null);
     const [sortBy, setSortBy] = useState(null);
