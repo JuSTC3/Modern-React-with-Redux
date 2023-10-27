@@ -1,4 +1,6 @@
-function useSort() {
+import { useState } from "react";
+
+function useSort(data, config) {
     const [sortOrder, setSortOrder] = useState(null);
     const [sortBy, setSortBy] = useState(null);
 

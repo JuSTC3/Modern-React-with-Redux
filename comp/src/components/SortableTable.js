@@ -1,13 +1,14 @@
-import { useState } from "react";
 import { GoTriangleDown, GoTriangleUp } from 'react-icons/go'
 import Table from "./Table";
+import useSort from "../hooks/use-sort";
 
 function SortableTable(props) {
-    
-
     const { config, data } = props;
 
-    
+    const { sortBy, sortOrder, sortedData, handleClick } = useSort(data, config);
+
+
+
 
     const updatedConfig = config.map((column) => {
         if (!column.sortValue) {
