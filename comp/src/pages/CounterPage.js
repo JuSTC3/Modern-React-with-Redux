@@ -18,7 +18,7 @@ function CounterPage({ initialCount }) {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        setCount(count + valueToAdd);
+        setCount(count + valueToAdd); // two state values
         setValueToAdd(0);
     };
 
