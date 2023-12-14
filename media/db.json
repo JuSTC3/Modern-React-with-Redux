@@ -21,28 +21,23 @@
     },
     {
       "userId": 1,
-      "title": "Practical Plastic Cheese",
+      "title": "Gorgeous Rubber Chicken",
       "id": 2
     },
     {
-      "userId": 1,
-      "title": "Rustic Plastic Gloves",
+      "userId": 2,
+      "title": "Bespoke Fresh Pizza",
       "id": 3
     },
     {
       "userId": 1,
-      "title": "Handmade Bronze Pants",
+      "title": "Handcrafted Fresh Shirt",
       "id": 4
     },
     {
       "userId": 1,
-      "title": "Fantastic Wooden Fish",
+      "title": "Small Granite Salad",
       "id": 5
-    },
-    {
-      "userId": 1,
-      "title": "Electronic Frozen Chicken",
-      "id": 6
     }
   ],
   "photos": []

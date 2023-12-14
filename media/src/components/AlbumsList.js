@@ -12,7 +12,6 @@ function AlbumsList({ user }) {
     };
 
     let content;
-
     if (isLoading) {
         content = <Skeleton times={2} className="h-10 w-full" />
     } else if (error) {
@@ -30,8 +29,8 @@ function AlbumsList({ user }) {
 
     return (
         <div>
-            <div>
-                Albums For {user.name}
+            <div className="m-2 flex flex-row items-center justify-between">
+                <h3 className="text-lg font-bold">Albums For {user.name}</h3>
                 <Button onClick={handleAddAlbum}>
                     + Add Album
                 </Button>
