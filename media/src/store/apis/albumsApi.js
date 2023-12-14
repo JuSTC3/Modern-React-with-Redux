@@ -4,13 +4,21 @@ import { faker } from "@faker-js/faker";
 const albumsApi = createApi({
     reducerPath: 'albums',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:3005'
+        baseUrl: 'http://localhost:3005',
+        fetchFn: async (...args) => { //overriding fetch fn for delay requests
+            await pause(1000);
+            return fetch(...args);
+        }
     }),
     endpoints(builder) {
         return {
             fetchAlbums: builder.query({
                 providesTags: (results, error, user) => {
-                    return [{ type: 'Album', id: user.id }]
+                    const tags = results.map(album => {
+                        return { type: 'Album', id: album.id }
+                    });
+                    tags.push({ type: 'UsersAlbums', id: user.id });
+                    return tags;
                 },
                 query: (user) => {
                     return {
@@ -24,7 +32,7 @@ const albumsApi = createApi({
             }),
             addAlbum: builder.mutation({
                 invalidatesTags: (results, error, user) => {
-                    return [{ type: 'Album', id: user.id }]
+                    return [{ type: 'UsersAlbums', id: user.id }]
                 },
                 query: (user) => {
                     return {
@@ -36,10 +44,28 @@ const albumsApi = createApi({
                         }
                     };
                 }
+            }),
+            removeAlbum: builder.mutation({
+                invalidatesTags: (results, error, album) => {
+                    return [{ type: 'Album', id: album.id }]
+                },
+                query: (album) => {
+                    return {
+                        url: `/albums/${album.id}`,
+                        method: 'DELETE'
+                    }
+                }
             })
         };
     }
 });
 
-export const { useFetchAlbumsQuery, useAddAlbumMutation } = albumsApi; // will create automatically
+//DEV ONLY
+const pause = (duration) => {
+    return new Promise((resolve) => {
+        setTimeout(resolve, duration);
+    });
+};
+
+export const { useFetchAlbumsQuery, useAddAlbumMutation, useRemoveAlbumMutation } = albumsApi; // will create automatically
 export { albumsApi };
