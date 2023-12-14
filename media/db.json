@@ -1,44 +1,56 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Myra"
+      "name": "Ramiro Keeling",
+      "id": 1
     },
     {
-      "name": "Jamie Mosciski",
+      "name": "Wilma Mohr",
       "id": 2
-    },
-    {
-      "name": "Jo Hilpert",
-      "id": 7
     }
   ],
   "albums": [
     {
-      "id": 1,
-      "title": "Hiking Trip",
-      "userId": 1
+      "userId": 1,
+      "title": "Modern Plastic Fish",
+      "id": 1
     },
     {
       "userId": 2,
-      "title": "Handcrafted Cotton Pizza",
-      "id": 10
+      "title": "Oriental Wooden Sausages",
+      "id": 2
     },
     {
-      "userId": 7,
-      "title": "Practical Fresh Bacon",
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "title": "Incredible Concrete Car",
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "title": "Refined Cotton Fish",
-      "id": 14
+      "userId": 2,
+      "title": "Rustic Cotton Keyboard",
+      "id": 3
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 1,
+      "url": "https://loremflickr.com/150/150?lock=1737031031980032",
+      "id": 1
+    },
+    {
+      "albumId": 1,
+      "url": "https://loremflickr.com/150/150?lock=5643794095538176",
+      "id": 2
+    },
+    {
+      "albumId": 1,
+      "url": "https://picsum.photos/seed/0fAHIq/150/150",
+      "id": 3
+    },
+    {
+      "albumId": 3,
+      "url": "https://picsum.photos/seed/Q8e2E0/150/150",
+      "id": 4
+    },
+    {
+      "albumId": 3,
+      "url": "https://loremflickr.com/150/150?lock=5521767713996800",
+      "id": 5
+    }
+  ]
 }
